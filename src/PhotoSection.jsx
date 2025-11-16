@@ -4,11 +4,11 @@ import { useLenisScroll } from "./useLenisScroll";
 
 // Add your photo URLs here
 const photos = [
-  "/Images/photoSection/_A737990-Bearbeitet.jpg",
-  "/Images/photoSection/_A738292.jpg",
-  "/Images/photoSection/_A739716.jpg",
-  "/Images/photoSection/Komp Gradient (0-00-01-13).png",
-  "/Images/photoSection/ShittyRig-1.jpg",
+  "/jonashartl-portfolio/Images/photoSection/_A737990-Bearbeitet.jpg",
+  "/jonashartl-portfolio/Images/photoSection/_A738292.jpg",
+  "/jonashartl-portfolio/Images/photoSection/_A739716.jpg",
+  "/jonashartl-portfolio/Images/photoSection/Komp Gradient (0-00-01-13).png",
+  "/jonashartl-portfolio/Images/photoSection/ShittyRig-1.jpg",
 ];
 
 export default function PhotosSection() {
