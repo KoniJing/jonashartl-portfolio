@@ -8,9 +8,9 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 export const items = [
   {
     id: 1,
-    url: "/jonashartl-portfolio/Images/Remnants-19.jpg",
+    url: "./Images/Remnants-19.jpg",
     title: "Remnants - a short film",
-    logo: "/jonashartl-portfolio/Images/TitleCard-Remnants.svg",
+    logo: "./Images/TitleCard-Remnants.svg",
     video: "https://player.vimeo.com/video/1117393192?h=a850f6bad3&autoplay=1&title=0&byline=0&portrait=0&muted=1",
     role:"13min | Direction | Editing",
     description:"A short film about friendship, betrayal and violence told through abstract visual storytelling.",
@@ -20,19 +20,19 @@ export const items = [
     soundDesign: "Jonas Schön",
     bts: 
     [
-      "/jonashartl-portfolio/Images/RemnantsBTS/Remnants_Extra-1.jpg",
-       "/jonashartl-portfolio/Images/RemnantsBTS/Remnants-53.jpg", 
-       "/jonashartl-portfolio/Images/RemnantsBTS/Remnants-42.jpg", 
-       "/jonashartl-portfolio/Images/RemnantsBTS/Remnants-14.jpg", 
-       "/jonashartl-portfolio/Images/RemnantsBTS/Remnants-20.jpg", 
-       "/jonashartl-portfolio/Images/RemnantsBTS/Remnants-35.jpg"
+      "./Images/RemnantsBTS/Remnants_Extra-1.jpg",
+       "./Images/RemnantsBTS/Remnants-53.jpg", 
+       "./Images/RemnantsBTS/Remnants-42.jpg", 
+       "./Images/RemnantsBTS/Remnants-14.jpg", 
+       "./Images/RemnantsBTS/Remnants-20.jpg", 
+       "./Images/RemnantsBTS/Remnants-35.jpg"
       ]
   },
   {
     id: 2,
-    url: "/jonashartl-portfolio/Images/Spiked.jpg",
+    url: "./Images/Spiked.jpg",
     title: "Spiked - interactive awareness campaign",
-    logo: "/jonashartl-portfolio/Images/TitleCard-Spiked.svg",
+    logo: "./Images/TitleCard-Spiked.svg",
     video: "https://player.vimeo.com/video/1071047759?h=aa95c88333&autoplay=1&title=0&byline=0&portrait=0&muted=1",
     role:"Interactive | Direction | UI-Design | VFX",
     description:"A interactive experience raising awareness about the dangers of spiked drinks in social settings.",
@@ -42,19 +42,19 @@ export const items = [
     soundDesign: "Jonas Schön",
     bts: 
     [
-      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS1.jpg",
-      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS2.jpg", 
-      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS3.jpg", 
-      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS4.heic", 
-      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS5.jpg", 
-      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS6.heic"
+      "./Images/SpikedBTS/SpikedBTS1.jpg",
+      "./Images/SpikedBTS/SpikedBTS2.jpg", 
+      "./Images/SpikedBTS/SpikedBTS3.jpg", 
+      "./Images/SpikedBTS/SpikedBTS4.heic", 
+      "./Images/SpikedBTS/SpikedBTS5.jpg", 
+      "./Images/SpikedBTS/SpikedBTS6.heic"
       ]
   },
   {
     id: 3,
-    url: "/jonashartl-portfolio/Images/Kalkalpen.jpg",
-    title: "/jonashartl-portfolio/ImageFilm Kalkalpen National Park",
-    logo: "/jonashartl-portfolio/Images/TitleCard-Kalkalpen.svg",
+    url: "./Images/Kalkalpen.jpg",
+    title: "./ImageFilm Kalkalpen National Park",
+    logo: "./Images/TitleCard-Kalkalpen.svg",
     video: "",
     role:"Direction | Editing | Sound Design",
     description:"Coming Soon!",
