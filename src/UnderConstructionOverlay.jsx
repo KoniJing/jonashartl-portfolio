@@ -30,7 +30,7 @@ export default function UnderConstructionOverlay() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
       className="
-        fixed w-full h-[100dvh] select-none cursor-none pointer-none: inset-0 z-[9999]
+        fixed w-full h-[100dvh] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] select-none cursor-none pointer-none: inset-0 z-[9999]
         bg-white flex items-center justify-center
         flex-col gap-4
       "

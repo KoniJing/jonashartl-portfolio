@@ -11,7 +11,7 @@ import Contact from './Contact';
 function App() {
   return (
     
-    <main className="App m-0 p-0 font-generalsans">
+    <main className="App m-0 p-0 h-full font-generalsans">
 
     <SmoothScroll>
       <UnderConstructionOverlay />
