@@ -45,9 +45,9 @@ export const items = [
       "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS1.jpg",
       "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS2.jpg", 
       "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS3.jpg", 
-      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS4.heic", 
+      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS4.jpg", 
       "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS5.jpg", 
-      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS6.heic"
+      "/jonashartl-portfolio/Images/SpikedBTS/SpikedBTS6.jpg"
       ]
   },
   {
@@ -69,6 +69,7 @@ export default function Work() {
   const [index, setIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
+  const scrollRef = useRef(null);
   const x = useMotionValue(0);
 
   const [activeItem, setActiveItem] = useState(null);
@@ -96,7 +97,7 @@ export default function Work() {
         WORK
       </motion.button>
 
-      <section ref={ containerRef } className="relative w-screen h-screen bg-white overflow-hidden flex flex-col items-center justify-center select-none">
+      <section ref={ scrollRef } className="relative w-screen h-screen bg-white overflow-hidden flex flex-col items-center justify-center select-none">
         <span className="absolute top-[-5.5vh] right-[-20vw] text-[35vw] font-medium leading-none text-black origin-center rotate-180">
           Work
         </span>
