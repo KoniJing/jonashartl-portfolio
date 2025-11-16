@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
@@ -41,6 +41,5 @@
     "tailwindcss": "^4.1.14",
     "vite": "^7.1.7"
   },
-
   "homepage": "https://KoniJing.github.io/JonasHartl-Portfolio"
 }
