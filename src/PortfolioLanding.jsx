@@ -48,7 +48,7 @@ export default function PortfolioLanding() {
 
 
       <motion.img
-        src="./Images/HSP-1.jpg"
+        src="/jonashartl-portfolio/Images/HSP-1.jpg"
         className="absolute top-0 left-0 w-full h-full object-cover z-0 grayscale transform-gpu will-change-transform"
         style={{ y, scale, borderRadius }}
       ></motion.img>
