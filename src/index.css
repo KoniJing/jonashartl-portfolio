@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url(../src/assets/fonts/GeneralSans-Regular.otf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url(../src/assets/fonts/GeneralSans-Medium.otf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url(../src/assets/fonts/GeneralSans-Semibold.otf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "GeneralSans";
+    src: url(../src/assets/fonts/GeneralSans-Bold.otf);
+    font-weight: 700;
+}
+
+@theme {
+    --font-generalsans: 'GeneralSans', sans-serif;
+}
