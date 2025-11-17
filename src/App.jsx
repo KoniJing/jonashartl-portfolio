@@ -9,13 +9,19 @@ import Contact from './Contact';
 
 
 function App() {
+  const isTouch =
+    typeof window !== "undefined" &&
+    ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
   return (
     
-    <main className="App m-0 p-0 h-full font-generalsans">
+    <main className="App m-0 p-0 font-generalsans">
 
     <SmoothScroll>
       <UnderConstructionOverlay />
-      <FloatingBall offset={{ x: 32, y: 32 }} size={20} color="#fff" />
+      {!isTouch && (
+        <FloatingBall offset={{ x: 32, y: 32 }} size={20} color="#fff" /> 
+        )}
       <PortfolioLanding />
       <Work />
       <PhotoSection />

@@ -30,10 +30,10 @@ export default function UnderConstructionOverlay() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
       className="
-        fixed w-full h-[100dvh] h-[100svh] h-[100lvh] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] select-none cursor-none pointer-none: inset-0 z-[9999]
-        bg-white flex items-center justify-center
-        flex-col gap-4
-      "
+      fixed inset-0 z-[9999]
+      w-[100vw]  h-dvh bg-white select-none flex cursor-none items-center justify-center
+      flex-col gap-4
+      no-safe-area"
     >
       <FontAwesomeIcon icon={faXmark} className="text-xl"/>
       <h1 className="text-md sm:text-1xl font-semibold text-gray-800 tracking-widest text-center px-6">

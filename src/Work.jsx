@@ -69,7 +69,6 @@ export default function Work() {
   const [index, setIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef(null);
-  const scrollRef = useRef(null);
   const x = useMotionValue(0);
 
   const [activeItem, setActiveItem] = useState(null);
@@ -97,7 +96,7 @@ export default function Work() {
         WORK
       </motion.button>
 
-      <section ref={ scrollRef } className="relative w-screen h-screen bg-white overflow-hidden flex flex-col items-center justify-center select-none">
+      <section ref={ containerRef } className="relative w-screen h-screen bg-white overflow-hidden flex flex-col items-center justify-center select-none">
         <span className="absolute top-[-5.5vh] right-[-20vw] text-[35vw] font-medium leading-none text-black origin-center rotate-180">
           Work
         </span>
@@ -134,7 +133,7 @@ export default function Work() {
           </motion.button>
 
           {/* Slider */}
-          <div className="relative overflow-hidden rounded-lg w-[90%]" ref={containerRef}>
+          <div className="relative overflow-hidden rounded-lg w-[90%]">
             <motion.div
               className="flex"
               drag="x"

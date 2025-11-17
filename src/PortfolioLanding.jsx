@@ -75,7 +75,7 @@ export default function PortfolioLanding() {
       
       <div className="absolute w-full h-screen flex flex-col items-center z-10 justify-end mix-blend-difference overflow-hidden">
       <motion.h1 
-        className="text-[12.4vw] font-generalsans font-bold text-white leading-65"
+        className="text-[12.7vw] font-generalsans font-bold text-white leading-65"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: .8, ease: "easeOut" }}>
