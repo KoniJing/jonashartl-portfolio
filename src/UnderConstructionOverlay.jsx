@@ -32,7 +32,7 @@ export default function UnderConstructionOverlay() {
   if (!showOverlay) return null;
 
   return (
-    <motion.div
+    <div
       className="
       fixed z-[9999]
       w-[100vw]  h-svh min-h-svh
@@ -40,8 +40,7 @@ export default function UnderConstructionOverlay() {
       select-none flex cursor-none 
       items-center justify-center
       flex-col gap-2
-      no-safe-area fill-safe-area
-      overflow-hidden touch-none"
+      no-safe-area"
     >
       <FontAwesomeIcon icon={faXmark} className="text-xl text-white"/>
       <h1 className="text-md sm:text-1xl font-semibold text-white tracking-widest text-center px-6">
@@ -49,6 +48,6 @@ export default function UnderConstructionOverlay() {
       </h1>
       <p className="text-sm sm:text-sm text-neutral-200 text-center px-20">
         Sorry! This portfolio is currently being optimized for mobile screens. Please extend your browser window to view the full experience.</p>
-    </motion.div>
+    </div>
   );
 }

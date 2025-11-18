@@ -15,15 +15,12 @@ body {
 
 @layer utilities {
   .no-safe-area {
-    padding-top: calc(env(safe-area-inset-top) * 0) !important;
-    padding-bottom: calc(env(safe-area-inset-bottom) * 0) !important;
-  }
-}
+    padding: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 
-@layer utilities {
-  .fill-safe-area {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
+    /* optional, macht absolut sicher */
+    inset: 0;
   }
 }
 
