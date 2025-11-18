@@ -1,48 +1,80 @@
 @import "tailwindcss";
 
+/* -----------------------------------------
+   Root color
+----------------------------------------- */
 :root {
-    --color-neutral-900: oklch(20.5% 0 0);
-  }
-  
-  /* Global background for iOS Safari safe area */
-  html,
+  --color-neutral-900: oklch(20.5% 0 0);
+}
+
+/* -----------------------------------------
+   Global background (fills iOS safe areas)
+----------------------------------------- */
+html,
+body {
+  background: var(--color-neutral-900);
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default iOS safe area padding on body */
+@layer base {
   body {
-    background: var(--color-neutral-900);
+    padding-top: calc(env(safe-area-inset-top) * 0) !important;
+    padding-bottom: calc(env(safe-area-inset-bottom) * 0) !important;
   }
-  
-  @layer utilities {
-    .no-safe-area {
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      padding-top: calc(env(safe-area-inset-top) * 0) !important;
-      padding-bottom: calc(env(safe-area-inset-bottom) * 0) !important;
-    }
+}
+
+/* -----------------------------------------
+   Utility classes
+----------------------------------------- */
+
+/* Explicitly remove padding from safe-area */
+@layer utilities {
+  .no-safe-area {
+    padding-top: calc(env(safe-area-inset-top) * 0) !important;
+    padding-bottom: calc(env(safe-area-inset-bottom) * 0) !important;
+  }
+}
+
+/* Force element to paint *into* the safe-area */
+@layer utilities {
+  .fill-safe-area {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* -----------------------------------------
+   Fonts
+----------------------------------------- */
+@font-face {
+  font-family: "GeneralSans";
+  src: url(../src/assets/fonts/GeneralSans-Regular.otf);
+  font-weight: 400;
 }
 
 @font-face {
-    font-family: "GeneralSans";
-    src: url(../src/assets/fonts/GeneralSans-Regular.otf);
-    font-weight: 400;
+  font-family: "GeneralSans";
+  src: url(../src/assets/fonts/GeneralSans-Medium.otf);
+  font-weight: 500;
 }
 
 @font-face {
-    font-family: "GeneralSans";
-    src: url(../src/assets/fonts/GeneralSans-Medium.otf);
-    font-weight: 500;
+  font-family: "GeneralSans";
+  src: url(../src/assets/fonts/GeneralSans-Semibold.otf);
+  font-weight: 600;
 }
 
 @font-face {
-    font-family: "GeneralSans";
-    src: url(../src/assets/fonts/GeneralSans-Semibold.otf);
-    font-weight: 600;
+  font-family: "GeneralSans";
+  src: url(../src/assets/fonts/GeneralSans-Bold.otf);
+  font-weight: 700;
 }
 
-@font-face {
-    font-family: "GeneralSans";
-    src: url(../src/assets/fonts/GeneralSans-Bold.otf);
-    font-weight: 700;
-}
-
+/* -----------------------------------------
+   Tailwind v4 theme extension
+----------------------------------------- */
 @theme {
-    --font-generalsans: 'GeneralSans', sans-serif;
+  --font-generalsans: "GeneralSans", sans-serif;
 }
