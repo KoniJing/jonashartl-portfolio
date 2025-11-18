@@ -7,10 +7,9 @@ export default function UnderConstructionOverlay() {
   const [showOverlay, setShowOverlay] = useState(false);
 
   useEffect(() => {
-    // Detect if screen width is medium or smaller
     const checkScreenSize = () => setShowOverlay(window.innerWidth < 900);
 
-    checkScreenSize(); // check on mount
+    checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
 
     return () => window.removeEventListener("resize", checkScreenSize);
@@ -34,25 +33,22 @@ export default function UnderConstructionOverlay() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4 }}
       className="
-      fixed inset-0 z-[9999]
+      fixed z-[9999]
       w-[100vw]  h-svh min-h-svh
-      bg-white
+      bg-neutral-800
       select-none flex cursor-none 
       items-center justify-center
-      flex-col gap-4
+      flex-col gap-2
       no-safe-area fill-safe-area
       overflow-hidden touch-none"
     >
-      <FontAwesomeIcon icon={faXmark} className="text-xl"/>
-      <h1 className="text-md sm:text-1xl font-semibold text-gray-800 tracking-widest text-center px-6">
+      <FontAwesomeIcon icon={faXmark} className="text-xl text-white"/>
+      <h1 className="text-md sm:text-1xl font-semibold text-white tracking-widest text-center px-6">
         UNDER CONSTRUCTION
       </h1>
-      <p className="text-sm sm:text-sm text-gray-600 text-center px-20">
-        Sorry for the inconvenience. This portfolio is currently being optimized for smaller screens. Please extend your browser window to view the full experience.</p>
+      <p className="text-sm sm:text-sm text-neutral-200 text-center px-20">
+        Sorry! This portfolio is currently being optimized for mobile screens. Please extend your browser window to view the full experience.</p>
     </motion.div>
   );
 }
