@@ -1,23 +1,11 @@
 @import "tailwindcss";
 
-/* -----------------------------------------
-   Root color
------------------------------------------ */
-:root {
-  --color-neutral-900: oklch(20.5% 0 0);
-}
-
-/* -----------------------------------------
-   Global background (fills iOS safe areas)
------------------------------------------ */
 html,
 body {
-  background: var(--color-neutral-900);
   margin: 0;
   padding: 0;
 }
 
-/* Remove default iOS safe area padding on body */
 @layer base {
   body {
     padding-top: calc(env(safe-area-inset-top) * 0) !important;
@@ -25,11 +13,6 @@ body {
   }
 }
 
-/* -----------------------------------------
-   Utility classes
------------------------------------------ */
-
-/* Explicitly remove padding from safe-area */
 @layer utilities {
   .no-safe-area {
     padding-top: calc(env(safe-area-inset-top) * 0) !important;
@@ -37,7 +20,6 @@ body {
   }
 }
 
-/* Force element to paint *into* the safe-area */
 @layer utilities {
   .fill-safe-area {
     padding-top: env(safe-area-inset-top);
@@ -45,9 +27,6 @@ body {
   }
 }
 
-/* -----------------------------------------
-   Fonts
------------------------------------------ */
 @font-face {
   font-family: "GeneralSans";
   src: url(../src/assets/fonts/GeneralSans-Regular.otf);
@@ -72,9 +51,6 @@ body {
   font-weight: 700;
 }
 
-/* -----------------------------------------
-   Tailwind v4 theme extension
------------------------------------------ */
 @theme {
   --font-generalsans: "GeneralSans", sans-serif;
 }

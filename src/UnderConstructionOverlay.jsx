@@ -19,15 +19,17 @@ export default function UnderConstructionOverlay() {
   useEffect(() => {
     if (showOverlay) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     }
   
     return () => {
       document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     };
   }, [showOverlay]);
-  
   if (!showOverlay) return null;
 
   return (
@@ -38,7 +40,7 @@ export default function UnderConstructionOverlay() {
       className="
       fixed inset-0 z-[9999]
       w-[100vw]  h-svh min-h-svh
-      bg-black
+      bg-white
       select-none flex cursor-none 
       items-center justify-center
       flex-col gap-4
