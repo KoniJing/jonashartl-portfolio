@@ -16,9 +16,8 @@ function App() {
   return (
     
     <main className="App m-0 p-0 font-generalsans">
-
+    <UnderConstructionOverlay />
     <SmoothScroll>
-      <UnderConstructionOverlay />
       {!isTouch && (
         <FloatingBall offset={{ x: 32, y: 32 }} size={20} color="#fff" /> 
         )}

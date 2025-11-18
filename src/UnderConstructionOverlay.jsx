@@ -17,11 +17,20 @@ export default function UnderConstructionOverlay() {
   }, []);
 
   useEffect(() => {
-    // Toggle scroll lock based on overlay visibility
-    document.body.style.overflow = showOverlay ? "hidden" : "auto";
-    return () => (document.body.style.overflow = "auto");
+    if (showOverlay) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden"; // ← ADD THIS
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto"; // ← ADD THIS
+    }
+  
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
   }, [showOverlay]);
-
+  
   if (!showOverlay) return null;
 
   return (
