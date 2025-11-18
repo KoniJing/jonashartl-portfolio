@@ -29,6 +29,7 @@ export default function UnderConstructionOverlay() {
       document.documentElement.style.overflow = "auto";
     };
   }, [showOverlay]);
+  
   if (!showOverlay) return null;
 
   return (

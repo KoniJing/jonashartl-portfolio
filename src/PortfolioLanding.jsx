@@ -10,10 +10,39 @@ import InfiniteBanner from "./InfiniteBanner";
 import { useLenisScroll } from "./useLenisScroll";
 
 export default function PortfolioLanding() {
+
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => setShowOverlay(window.innerWidth < 900);
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (showOverlay) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    }
+  
+    return () => {
+      document.body.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [showOverlay]);
+  
   const scrollY = useLenisScroll();
 
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  
+  if (showOverlay) return null;
 
   useEffect(() => {
     if (!ref.current) return;
@@ -39,7 +68,7 @@ export default function PortfolioLanding() {
   const scale = useTransform(scrollY, [0, 1000], [1, 0.48]);
   const borderRadius = useTransform(scrollY, (v) => (v > 0 ? "20px" : "0px"));
   
-  if (showOverlay) return null;
+  
 
   return (
 
