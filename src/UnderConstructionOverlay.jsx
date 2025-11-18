@@ -44,7 +44,8 @@ export default function UnderConstructionOverlay() {
       select-none flex cursor-none 
       items-center justify-center
       flex-col gap-4
-      no-safe-area fill-safe-area"
+      no-safe-area fill-safe-area
+      overflow-hidden touch-none"
     >
       <FontAwesomeIcon icon={faXmark} className="text-xl"/>
       <h1 className="text-md sm:text-1xl font-semibold text-gray-800 tracking-widest text-center px-6">
