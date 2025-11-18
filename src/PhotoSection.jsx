@@ -2,18 +2,15 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLenisScroll } from "./useLenisScroll";
 
-// Add your photo URLs here
-const photos = [
-  "/jonashartl-portfolio/Images/photoSection/_A737990-Bearbeitet.jpg",
-  "/jonashartl-portfolio/Images/photoSection/_A738292.jpg",
-  "/jonashartl-portfolio/Images/photoSection/_A739716.jpg",
-  "/jonashartl-portfolio/Images/photoSection/Komp Gradient (0-00-01-13).png",
-  "/jonashartl-portfolio/Images/photoSection/ShittyRig-1.jpg",
-];
-
 export default function PhotosSection() {
+  // Dynamically import all images from public/photoSection
+  const photos = Object.values(
+    import.meta.glob('../src/photoSection2/*.{jpg,jpeg,png,gif,png}', { eager: true, import: 'default' })
+  );
+
   const [trail, setTrail] = useState([]);
   const [isHovering, setIsHovering] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const lastPos = useRef({ x: 0, y: 0 });
   const sectionRef = useRef(null);
   const scrollY = useLenisScroll();
@@ -21,10 +18,7 @@ export default function PhotosSection() {
   const handleMouseMove = (e) => {
     if (!isHovering) return;
 
-    // Get section position relative to viewport
     const sectionRect = sectionRef.current.getBoundingClientRect();
-
-    // Compute cursor position relative to the section
     const x = e.clientX - sectionRect.left;
     const y = e.clientY - sectionRect.top;
 
@@ -51,28 +45,23 @@ export default function PhotosSection() {
     }
   };
 
-  const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     if (!sectionRef.current) return;
 
     const elementTop = sectionRef.current.offsetTop;
-    const elementHeight = sectionRef.current.offsetHeight;
     const viewportHeight = window.innerHeight;
 
     const checkVisibility = () => {
-      const scroll = scrollY.get(); // current scroll position from Lenis
-      if (scroll + viewportHeight > elementTop + 50) { // 50px buffer
+      const scroll = scrollY.get();
+      if (scroll + viewportHeight > elementTop + 50) {
         setIsVisible(true);
       }
     };
 
-    checkVisibility(); // check immediately in case already in view
+    checkVisibility();
     const unsubscribe = scrollY.on("change", checkVisibility);
-
     return () => unsubscribe();
-  }, [sectionRef, scrollY]);
-
+  }, [scrollY]);
 
   return (
     <section
@@ -88,14 +77,14 @@ export default function PhotosSection() {
         setTrail([]);
       }}
       onMouseMove={handleMouseMove}
-    > 
-    
-      <motion.div 
-      className="flex flex-col items-center z-10 mix-blend-difference"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isVisible ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, ease: "easeOut" }}>
-        <h1 className="text-[10vw] font-bold text-white select-none leading-[1.2] text-center ">
+    >
+      <motion.div
+        className="flex flex-col items-center z-10 mix-blend-difference"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h1 className="text-[10vw] font-bold text-white select-none leading-[1.2] text-center">
           photos
           <br />
           <span className="text-[1vw] block text-center font-light">
@@ -122,7 +111,7 @@ export default function PhotosSection() {
           />
         ))}
       </AnimatePresence>
-            
+
       <div className="absolute bg-white w-screen h-screen z-0 rounded-b-4xl"></div>
     </section>
   );
