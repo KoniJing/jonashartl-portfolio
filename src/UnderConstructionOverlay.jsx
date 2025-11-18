@@ -30,7 +30,6 @@ export default function UnderConstructionOverlay() {
       document.documentElement.style.overflow = "auto";
     };
   }, [showOverlay]);
-  
   if (!showOverlay) return null;
 
   return (
@@ -41,7 +40,7 @@ export default function UnderConstructionOverlay() {
       className="
       fixed inset-0 z-[9999]
       w-[100vw]  h-svh min-h-svh
-      bg-white 
+      bg-black
       select-none flex cursor-none 
       items-center justify-center
       flex-col gap-4

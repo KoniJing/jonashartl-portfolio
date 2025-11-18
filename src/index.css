@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+:root {
+    --color-neutral-900: oklch(20.5% 0 0);
+  }
+  
+  /* Global background for iOS Safari safe area */
+  html,
+  body {
+    background: var(--color-neutral-900);
+  }
+  
+  @layer utilities {
+    .no-safe-area {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      padding-top: calc(env(safe-area-inset-top) * 0) !important;
+      padding-bottom: calc(env(safe-area-inset-bottom) * 0) !important;
+    }
+}
+
 @font-face {
     font-family: "GeneralSans";
     src: url(../src/assets/fonts/GeneralSans-Regular.otf);
