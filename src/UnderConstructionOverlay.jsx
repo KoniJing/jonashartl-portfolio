@@ -29,7 +29,7 @@ export default function UnderConstructionOverlay() {
       document.documentElement.style.overflow = "auto";
     };
   }, [showOverlay]);
-  
+
   if (!showOverlay) return null;
 
   return (
@@ -37,17 +37,17 @@ export default function UnderConstructionOverlay() {
       className="
       fixed z-[9999]
       w-[100vw]  h-svh min-h-svh
-      bg-neutral-800
+      bg-white
       select-none flex cursor-none 
       items-center justify-center
       flex-col gap-2
       no-safe-area"
     >
-      <FontAwesomeIcon icon={faXmark} className="text-xl text-white"/>
-      <h1 className="text-md sm:text-1xl font-semibold text-white tracking-widest text-center px-6">
+      <FontAwesomeIcon icon={faXmark} className="text-xl"/>
+      <h1 className="text-md sm:text-1xl font-semibold text-black tracking-widest text-center px-6">
         UNDER CONSTRUCTION
       </h1>
-      <p className="text-sm sm:text-sm text-neutral-200 text-center px-20">
+      <p className="text-sm sm:text-sm text-neutral-800 text-center px-20">
         Sorry! This portfolio is currently being optimized for mobile screens. Please extend your browser window to view the full experience.</p>
     </div>
   );
