@@ -31,7 +31,10 @@ export default function UnderConstructionOverlay() {
       transition={{ duration: 0.4 }}
       className="
       fixed inset-0 z-[9999]
-      w-[100vw]  h-dvh bg-white select-none flex cursor-none items-center justify-center
+      w-[100vw]  h-svh min-h-svh
+      bg-white 
+      select-none flex cursor-none 
+      items-center justify-center
       flex-col gap-4
       no-safe-area"
     >
