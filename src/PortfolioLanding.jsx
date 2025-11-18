@@ -39,8 +39,11 @@ export default function PortfolioLanding() {
   const scale = useTransform(scrollY, [0, 1000], [1, 0.48]);
   const borderRadius = useTransform(scrollY, (v) => (v > 0 ? "20px" : "0px"));
   
+  if (showOverlay) return null;
 
   return (
+
+    
     <div className="w-screen">
     
     {/* Section 1 */}
