@@ -4,33 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function UnderConstructionOverlay() {
-  const [showOverlay, setShowOverlay] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => setShowOverlay(window.innerWidth < 900);
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
-  useEffect(() => {
-    if (showOverlay) {
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-    }
-  
-    return () => {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-    };
-  }, [showOverlay]);
-
-  if (!showOverlay) return null;
 
   return (
     <div

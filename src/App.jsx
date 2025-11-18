@@ -10,23 +10,23 @@ import Contact from './Contact';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+      const checkWidth = () => setIsMobile(window.innerWidth < 900);
+      checkWidth();
+      window.addEventListener("resize", checkWidth);
+
+      return () => window.removeEventListener("resize", checkWidth);
+    }, []);
+
   const isTouch =
     typeof window !== "undefined" &&
     ("ontouchstart" in window || navigator.maxTouchPoints > 0);
 
-  useEffect(() => {
-    const checkWidth = () => setIsMobile(window.innerWidth < 900);
-    checkWidth(); // initial
-    window.addEventListener("resize", checkWidth);
-
-    return () => window.removeEventListener("resize", checkWidth);
-  }, []);
-
   return (
     <main className="App m-0 p-0 font-generalsans">
 
-      {/* Always show overlay */}
-      <UnderConstructionOverlay />
+      {isMobile && (<UnderConstructionOverlay />)}
 
       {!isMobile && (
         <SmoothScroll>
