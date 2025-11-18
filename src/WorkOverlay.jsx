@@ -111,7 +111,7 @@ export default function WorkOverlay({ item, onClose }) {
       <hr className="w-[40%] mx-auto border-t border-gray-300 mt-[25%] xl:hidden" />
 
       {/* About Section */}
-      <section className="max-w-3xl mx-auto x-6 xl:py-22 xl:pt-45 pt-[8vw] pb-40 text-center">
+      <section className="max-w-3xl mx-auto x-6 xl:py-22 xl:pt-35 pt-[8vw] pb-40 text-center">
         <h2 className="text-3xl font-semibold mb-6 tracking-widest">ABOUT</h2>
         <p className="text-gray-700 text-lg leading-relaxed">
           {item.about}
